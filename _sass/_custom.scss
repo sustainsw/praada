@@ -1,0 +1,582 @@
+/* add your scss tweaks here */
+main {
+    background-color: #f1f1f1;
+    /* Replace with your desired color */
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+
+    /* Replace with your desired color */
+    gap: 60px;
+}
+
+
+
+.sidebar-layout {
+    width: 20%;
+    text-align: right;
+
+}
+
+.sidebar a {
+    color: black;
+}
+
+.sidebar ul {
+    line-height: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-layout {
+    width: 80%;
+}
+
+/*for the news section*/
+.blog-row {
+    border: 1px solid #ccc;
+    /* Add an outline or border */
+    padding: 15px;
+    margin-bottom: 20px;
+    /* Add space between rows */
+    display: flex;
+    /* Add space between rows */
+}
+
+/*remove the margins for news*/
+.custom-container {
+    padding: 0;
+    margin: 0;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.brand-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8em;
+    /* adjust as needed */
+}
+
+.navbar-brand img {
+    height: 100px;
+    /* adjust as needed */
+}
+
+.navbar .nav-link {
+    font-size: 18px;
+    /* Larger text size */
+    margin-right: 30px;
+    /* More space between items */
+    padding: 5px 15px;
+    /* Optional: Adjust if you want to change the vertical space inside the items */
+    font-weight: 600;
+    /* Makes the text bold */
+}
+
+.logo-text-color {
+    color: #000000;
+    /* replace with your color */
+}
+
+.my-color {
+    color: #ffffff;
+    /* replace with your color */
+}
+
+#map {
+    height: 350px;
+    width: 500px;
+}
+
+.search-bar {
+    border: 1px solid white;
+    /* Set the border to white */
+    /* Add other styles as needed */
+    color: white;
+    border-color: white;
+    /* Example border color */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 10vw);
+    grid-gap: 5px;
+
+
+}
+
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.gallery__item--1 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    margin-top: -15px;
+
+}
+
+.gallery__item--2 {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 5;
+
+
+}
+
+.gallery__item--3 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.gallery__item--4 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.gallery__item--5 {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    background-color: rgba(38, 38, 38, 0.8);
+    margin-bottom: 16px;
+    /* Replace with your desired color and transparency */
+}
+
+.gallery__title {
+    font-size: 4vw;
+    font-weight: bold;
+    text-align: left;
+    color: #ffffff;
+    margin: 3%;
+    margin-bottom: 0;
+
+}
+
+.gallery__text {
+    font-size: 1.5vw;
+    text-align: left;
+    color: #ffffff;
+    margin: 5%;
+}
+
+
+/* Add Media Query for smaller screens */
+@media (max-width: 768px) {
+
+    .gallery__item--5 {
+        grid-column-start: auto;
+        grid-column-end: auto;
+        grid-row-start: auto;
+        grid-row-end: auto;
+        margin-top: -15px;
+    }
+
+    .gallery__item--5 {
+        grid-column: span 8;
+        /* Adjust text container to span full width */
+        background-color: rgba(38, 38, 38, 0.8);
+        /* Optional: Adjust background */
+        margin-bottom: 16px;
+        /* Adjust margin */
+
+    }
+
+
+    .gallery__title {
+        font-size: 3em;
+        font-weight: bold;
+        text-align: left;
+        color: #ffffff;
+        margin: 5%;
+    }
+
+    .gallery__text {
+        font-size: 2em;
+        /* Adjust font size for smaller screens */
+        margin: 5%;
+        /* Adjust margin */
+    }
+}
+
+/* CSS to make dropdown menus open on hover */
+@media (min-width: 992px) {
+
+    /* Adjusts for devices with widths 992px and up, similar to Bootstrap's navbar-expand-lg */
+    .navbar .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+
+
+.navbar .dropdown-menu {
+    border: none;
+    /* Removes the border */
+    /* Optional: if there's a box-shadow you want to remove as well */
+    box-shadow: none;
+    margin-top: 0;
+    /* Removes any margin between the dropdown button and the menu */
+
+}
+
+.navbar .nav-link:hover {
+    border-bottom: 2px solid #5f0000;
+    /* Makes the underline thicker and blue */
+    padding-bottom: 1px;
+    /* Increases distance from the text */
+}
+
+.colorpicker {
+    color: #8a0000
+}
+
+
+
+
+/*** 
+time line
+***/
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #8b8b8b;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    bottom: 0;
+    left: 60px;
+    /* Previously 0, now moved 100px to the right */
+    margin-left: 40px;
+    /* Increase margin-left to move timeline to the right */
+}
+
+/* Container around content */
+.timeline-container {
+    padding: 10px 10px;
+    position: relative;
+    background-color: inherit;
+    width: calc(100% - 80px);
+    /* Adjust width considering timeline width */
+    margin-left: 90px;
+    /* Adjust left margin to position content to the right of the timeline */
+}
+
+/* The circles on the timeline */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: -20px;
+    /* Adjust if needed based on new timeline position */
+    background-color: #ffffff;
+    border: 6px solid #000000;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+.timeline-date {
+    position: absolute;
+    left: -110px;
+    /* Adjust based on actual layout */
+    top: 3px;
+    /* Adjust to align with the center of the circle */
+    color: #ffffff;
+    /* Date text color */
+    font-size: 20px;
+    /* Adjust as needed */
+    /* Optionally add more styling here */
+}
+
+
+/* The actual content */
+.timeline-content {
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    position: relative;
+    border-radius: 6px;
+
+}
+
+/* Default style for the narrow screen */
+.narrow-screen {
+    display: none;
+}
+
+/***
+
+infographic
+
+***/
+
+.infographic-section {
+    /* Change the background color as needed */
+    padding: 20px;
+    text-align: justify;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: #353535;
+
+}
+
+.infographic-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.infographic-sub-row {
+    display: flex;
+}
+
+.infographic-sub-section {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.infographic-section img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    /* Add border with color and width */
+}
+
+
+
+.icon-array {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 columns */
+    grid-auto-rows: auto;
+    /* Automatically adjust row height based on content */
+    justify-content: center;
+    /* Center the grid horizontally */
+    gap: 10px;
+    /* Adjust the gap between icons */
+    font-size: 30px;
+    margin: 10px;
+}
+
+.icon-array i {
+    width: 100%;
+    /* Ensure icons take full width of their grid cell */
+}
+
+.icon-array-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center items horizontally */
+    text-align: center;
+    /* Center text */
+
+}
+
+.infogrphic-r11 {
+    width: 33%
+}
+
+.infogrphic-r12 {
+    width: 33%
+}
+
+.infogrphic-r13 {
+    width: 34%
+}
+
+.infogrphic-r21 {
+    width: 40%
+}
+
+.infogrphic-r22 {
+    width: 60%
+}
+
+.logo-left-15 {
+    left: 4%;
+    position: relative;
+}
+
+.logo-left-10 {
+    left: 3%;
+    position: relative;
+}
+
+
+.logo-row {
+    align-items: center;
+}
+
+
+
+@media (max-width: 768px) {
+    .infographic-row {
+        flex-direction: column;
+    }
+
+    .infographic-section {
+        width: 100%;
+    }
+
+    .timeline-content-title {
+        font-size: 21px;
+        font-weight: bold;
+        align-items: left;
+
+    }
+
+    .logo-row {
+        align-items: center;
+    }
+
+
+    .logo-row .col-md-4 {
+        text-align: center;
+    }
+
+    .logo-left-15 {
+        left: 0%;
+        position: relative;
+    }
+
+    .logo-left-10 {
+        left: 0%;
+        position: relative;
+    }
+
+
+
+
+
+
+
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+
+        left: 0px;
+        /* Previously 0, now moved 100px to the right */
+        margin-left: 10px;
+        /* Increase margin-left to move timeline to the right */
+    }
+
+    /* Container around content */
+    .timeline-container {
+        padding: 10px 10px;
+        position: relative;
+        background-color: inherit;
+        width: calc(100%);
+        /* Adjust width considering timeline width */
+        margin-left: 0px;
+        /* Adjust left margin to position content to the right of the timeline */
+        margin-top: 30px;
+    }
+
+    .timeline-container::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: -20px;
+        /* Adjust if needed based on new timeline position */
+        background-color: #ffffff;
+        border: 6px solid #000000;
+        top: -10px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+
+    .timeline-date {
+        position: absolute;
+        left: 0px;
+        /* Adjust based on actual layout */
+        top: -30px;
+        /* Adjust to align with the center of the circle */
+        color: #ffffff;
+        /* Date text color */
+        font-size: 20px;
+        /* Adjust as needed */
+        /* Optionally add more styling here */
+    }
+
+
+    /* The actual content */
+    .timeline-content {
+        padding: 20px 30px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        position: relative;
+        border-radius: 6px;
+
+    }
+
+    .timeline-date .narrow-screen {
+        display: inline;
+    }
+
+    .timeline-date .wide-screen {
+        display: none;
+    }
+
+}
+
+
+
+.social-media-icons a {
+    margin: 0 10px;
+    font-size: 30px;
+    /* Pushes the icons to the bottom */
+}
+
+.social-media-icons {
+    display: flex;
+    /* This will enable flexbox for the container */
+    align-items: center;
+    /* Align items vertically in the center */
+    justify-content: start;
+    /* Align items to the start of the container */
+    flex-direction: row;
+    /* Ensures the items are laid out in a row */
+}
+
+
+.social-media-icons p {
+    margin: 0 10px 0 0;
+    font-size: 25px;
+    /* Adjusts spacing around the paragraph. Remove right margin if not needed */
+}

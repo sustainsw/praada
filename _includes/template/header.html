@@ -1,0 +1,99 @@
+<div class="navbar-text-color text-center">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-text-color" ,
+        style="background-color: white; height: 110px;">
+        <div class="container ">
+            <a class="navbar-brand d-flex flex-column flex-md-row align-items-center" href="{{ '/' | relative_url }}"
+                style="display: flex; flex-direction: row; ">
+                <img src="{{ '/assets/img/logo-other-font.png' | relative_url }}" class="d-inline-block align-top"
+                    alt="{{ site.title }}">
+            </a>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-text-color">
+        <div class="container ">
+
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                {% assign unique_parents = "" | split: "" %}
+                {% assign sorted_pages = site.html_pages | sort: "nav_order" %}
+                {% for page in sorted_pages %}
+                {% if page.parent %}
+                {% unless unique_parents contains page.parent %}
+                {% assign unique_parents = unique_parents | push: page.parent %}
+                {% endunless %}
+                {% endif %}
+                {% endfor %}
+
+                <ul class="navbar-nav mr-auto justify-content-center">
+                    {% for parent in unique_parents %}
+                    {% assign pages = site.html_pages | where: "parent", parent | sort: "nav_order" %}
+                    {% if pages.size > 1 %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="color: rgb(255, 255, 255);">
+                            {{ parent | escape }}
+                        </a>
+                        <div class="dropdown-menu bg-dark my-color" aria-labelledby="navbarDropdown">
+                            {% for page in pages %}
+                            {% if page.link_to_external %}
+                            <a class="dropdown-item my-color" href="{{ page.link_to_external }}">{{ page.nav }}</a>
+                            {% else %}
+                            <a class="dropdown-item my-color" href="{{ page.url | relative_url }}">{{ page.nav }}</a>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+
+                        {% if pages[0].link_to_external %}
+                        <a class="nav-link my-color" href="{{ pages[0].link_to_external }}"
+                            style="color: {{ pages[0].title_color }};">{{ pages[0].nav
+                            }}</a>
+
+                        {% else %}
+                        <a class="nav-link my-color" href="{{ pages[0].url | relative_url }}"
+                            style="color: {{ pages[0].title_color }};">{{ pages[0].nav
+                            }}</a>
+                        {% endif %}
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
+
+                {% if site.search == true %}
+                <script>
+                    function site_search() {
+                        var query = document.getElementById("site-search").value;
+                        window.open("{{ '/search.html' | relative_url }}?q=" + encodeURIComponent(query), "_self");
+                    }
+                </script>
+                <form class="form-inline my-2 my-lg-0" onsubmit="site_search(); return false;">
+                    <div class="input-group">
+                        <input id="site-search" class="form-control" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary search-bar" type="submit">{% include icon.html
+                                icon="search"
+                                label="Submit Search" %}</button>
+                        </div>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+</div>
